@@ -12,8 +12,8 @@
       let id = $(this).data("id");
         $.get("/products/" + id + "/description", function(data) {
         $("#more-info-product-" + id).text(data);
-      })
-    })
-  })
+      });
+    });
+  });
 
 </script>
