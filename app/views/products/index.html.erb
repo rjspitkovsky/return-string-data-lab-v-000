@@ -1,8 +1,19 @@
 <% @products.each do |product| %>
 <h1><%= product.name %></h1>
-<div>
+<div id="more-info-product-<%=product.id%>">
   <%= truncate product.description %>
   <button class="js-more-info" data-id="<%=product.id%>"name="button">More Info</button>
 </div>
 <% end %>
 
+<script type="text/javascript">
+  $(function () {
+    $(".js-more-info").in('click', function() {
+      let id = $(this).data("id");
+      $.get("/products" + id + "/description", function(data) {
+        $("#more-info-product" + id).text(data)
+      })
+    })
+  }) 
+  
+</script>
