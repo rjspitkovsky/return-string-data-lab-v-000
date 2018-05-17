@@ -19,7 +19,7 @@
       //     $("#more-info-product" + id).text(inventory)
       //   }
         $.get("/products/" + id + "/description", function(data) {
-        $("#more-info-product-" + id).text(data)
+        $("#more-info-product-" + id).text(data);
       })
     })
   })
