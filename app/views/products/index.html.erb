@@ -10,14 +10,6 @@
   $(function () {
     $(".js-more-info").on('click', function() {
       let id = $(this).data("id");
-      // $.get("/products" + id + "/inventory", function(data) {
-      //   if (data === true) {
-      //     let inventory = "Available"
-      //     $("#more-info-product" + id).text(inventory)
-      //   } else {
-      //     let inventory = "Sold Out"
-      //     $("#more-info-product" + id).text(inventory)
-      //   }
         $.get("/products/" + id + "/description", function(data) {
         $("#more-info-product-" + id).text(data);
       })
