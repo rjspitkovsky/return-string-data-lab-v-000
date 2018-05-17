@@ -11,7 +11,7 @@ class ProductsController < ApplicationController
   def create
     @product = Product.new(products_params)
     @product.save
-    redirect_to products_path 
+    redirect_to products_path
   end
 
   def description
@@ -21,7 +21,7 @@ class ProductsController < ApplicationController
 
   def inventory
     product = Product.find(params[:id])
-    render plain: !!product.inventory
+    render plain: product.inventory
   end
 
   private
