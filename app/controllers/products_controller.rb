@@ -8,10 +8,10 @@ class ProductsController < ApplicationController
     @product = Product.new
   end
 
-  def create 
+  def create
     @product = Product.new(products_params)
-    @product.save 
-  end 
+    @product.save
+  end
 
   def description
     product = Product.find(params[:id])
@@ -21,10 +21,10 @@ class ProductsController < ApplicationController
   def inventory
     product = Product.find(params[:id])
     render plain: !!product.inventory
-  end 
+  end
 
-  private 
-    def products_params 
+  private
+    def products_params
       params.require(:product).permit(:name, :price, :inventory, :description)
     end 
 
