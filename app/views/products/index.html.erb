@@ -11,7 +11,7 @@
     $(".js-more-info").on('click', function() {
       let id = $(this).data("id");
         $.get("/products/" + id + "/description", function(data) {
-        $("#more-info-product-" + id).text(data);
+        $("#more-info-product-" + id).html(data);
       });
     });
   });
