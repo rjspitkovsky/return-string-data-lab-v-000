@@ -5,4 +5,5 @@ Rails.application.routes.draw do
 
   resources :products, only: [:index, :new]
   get '/products/:id/description', to: 'products#description'
+  get 'products/:id/inventory', to: 'products#inventory'
 end

@@ -6,11 +6,11 @@ class ProductsController < ApplicationController
 
   def new
     @product = Product.new
-  end 
+  end
 
-  def description 
+  def description
     product = Product.find(params[:id])
-    render plain: product.description 
+    render plain: product.description
   end 
 
 end
