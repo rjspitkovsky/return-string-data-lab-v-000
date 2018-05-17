@@ -19,8 +19,8 @@
               inventoryText = "Sold Out"
             }
             let description = "<p>" + data + "</p><p>" + inventoryText + "</p>";
+            $("#product-" + id).html(description);
           })
-        $("#product-" + id).html(description);
       });
     });
   });
